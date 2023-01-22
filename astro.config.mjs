@@ -4,12 +4,10 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 import tailwind from "@astrojs/tailwind";
-
-// https://astro.build/config
-import preact from "@astrojs/preact";
+import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
-  integrations: [mdx(), sitemap(), tailwind(), preact()]
+  integrations: [mdx(), sitemap(), tailwind(), solidJs()]
 });
