@@ -49,7 +49,7 @@ const Header = ({ ...props }: MenuProps) => {
               id="mobile-menu"
               class={`fixed top-0 right-0 ${
                 $isMenuOpen() ? 'w-full' : 'w-0'
-              } z-30 grid h-full place-items-center overflow-hidden bg-white/90 backdrop-blur transition-all duration-300 dark:bg-black/90 md:hidden`}>
+              } z-30 grid h-full place-items-center overflow-hidden bg-white/90 backdrop-blur-lg transition-all duration-300 dark:bg-black/90 md:hidden`}>
               <button
                 class={`${
                   $isMenuOpen() ? 'absolute' : 'hidden'
