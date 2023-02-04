@@ -5,14 +5,13 @@ import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
 import Carousel from '../components/Carousel'
 import HeaderLink from '../components/HeaderLink.astro'
-import ThemeIcon from '../components/ThemeIcon.astro'
 
 export interface BaseProps {
   title: string
   carouselContent: any[]
 }
 
-const { title, carouselContent } = Astro.props as BaseProps
+const { title, carouselContent = [] } = Astro.props as BaseProps
 ---
 
 <!DOCTYPE html>
