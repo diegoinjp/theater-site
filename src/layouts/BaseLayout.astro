@@ -1,0 +1,56 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
+import Carousel from '../components/Carousel'
+import HeaderLink from '../components/HeaderLink.astro'
+import ThemeIcon from '../components/ThemeIcon.astro'
+
+export interface BaseProps {
+  title: string
+  carouselContent: any[]
+}
+
+const { title, carouselContent } = Astro.props as BaseProps
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${SITE_TITLE} | ${title}`}
+      description={SITE_DESCRIPTION}
+    />
+  </head>
+  <body class="text-zinc-900 dark:bg-zinc-900 dark:text-white">
+    <main class="grid w-full place-items-center">
+      <div class="w-full lg:w-[56rem]">
+        <Header client:only="solid">
+          <HeaderLink href="/">Home</HeaderLink>
+          <HeaderLink href="/blog">Blog</HeaderLink>
+          <HeaderLink href="/about">About</HeaderLink>
+          <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">
+            Twitter
+          </HeaderLink>
+          <HeaderLink href="https://github.com/withastro/astro" target="_blank">
+            GitHub
+          </HeaderLink>
+        </Header>
+        {
+          carouselContent && (
+            <Carousel
+              posts={carouselContent}
+              height="50vh"
+              client:only="solid"
+            />
+          )
+        }
+        <div class="p-5">
+          <slot />
+        </div>
+        <Footer />
+      </div>
+    </main>
+  </body>
+</html>
