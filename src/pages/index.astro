@@ -31,7 +31,7 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
     <ul>
       {
         posts.map((post) => (
-          <li class="first:border-t">
+          <li class="border-zinc-900 first:border-t dark:border-white">
             <a href={post.url} class="w-full">
               <BlogCard>
                 <div class="flex">
