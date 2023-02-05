@@ -22,8 +22,12 @@ const { title, carouselContent = [] } = Astro.props as BaseProps
       description={SITE_DESCRIPTION}
     />
   </head>
-  <body class="grid w-full place-items-center bg-violet-200 dark:bg-zinc-800">
-    <main class="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white">
+  <body
+    class="grid w-full place-items-center bg-gradient-to-tr from-violet-100 to-violet-50 dark:from-zinc-800 dark:to-zinc-700"
+  >
+    <main
+      class="flex min-h-screen flex-col justify-between bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white"
+    >
       <div class="w-full lg:w-[56rem]">
         <Header client:only="solid" title={SITE_TITLE}>
           <HeaderLink href="/">Home</HeaderLink>
