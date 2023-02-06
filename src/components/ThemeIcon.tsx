@@ -13,7 +13,9 @@ const initializeTheme = () => {
 }
 
 const ThemeIcon = () => {
-  const [theme, setTheme] = createSignal<string>(initializeTheme())
+  const [theme, setTheme] = createSignal<string>(
+    localStorage.getItem('theme') ?? 'light'
+  )
 
   createEffect(() => {
     const root = document.documentElement
