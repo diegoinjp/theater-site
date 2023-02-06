@@ -2,8 +2,7 @@
 layout: ../../layouts/BlogPost.astro
 title: First post
 description: Lorem ipsum dolor sit amet
-pubDate: Jul 08 2022
-customer: 2023-02-06T22:33:00.911Z
+pubDate: 2023-02-06T22:33:00.911Z
 heroImage: https://images.unsplash.com/photo-1480796927426-f609979314bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2300&q=80
 ---
 

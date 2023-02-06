@@ -22,6 +22,6 @@ collections:
         }
       - { label: 'title', name: 'title', widget: 'string' }
       - { label: 'description', name: 'description', widget: 'string' }
-      - { label: 'pubDate', name: 'customer', widget: 'datetime' }
+      - { label: 'pubDate', name: 'pubDate', widget: 'datetime' }
       - { label: 'heroImage', name: 'heroImage', widget: 'image' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
