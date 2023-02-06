@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostLayout.astro
+layout: '../../layouts/BlogPost.astro'
 title: Fourth Post
 description: Blah blah blah
 pubDate: 2023-02-06T22:35:42.600Z

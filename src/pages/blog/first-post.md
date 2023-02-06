@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPost.astro
+layout: '../../layouts/BlogPost.astro'
 title: First post
 description: Lorem ipsum dolor sit amet
 pubDate: 2023-02-06T22:33:00.911Z

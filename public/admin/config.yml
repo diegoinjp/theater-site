@@ -18,7 +18,7 @@ collections:
           label: 'layout',
           name: 'layout',
           widget: 'hidden',
-          default: '../../layouts/PostLayout.astro'
+          default: '../../layouts/BlogPost.astro'
         }
       - { label: 'title', name: 'title', widget: 'string' }
       - { label: 'description', name: 'description', widget: 'string' }
