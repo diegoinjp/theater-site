@@ -1,4 +1,5 @@
 ---
+import { date_options } from '../config'
 import BaseLayout from './BaseLayout.astro'
 
 export interface BlogProps {
@@ -18,23 +19,24 @@ const {
 
 <BaseLayout title={title} description={description}>
   <article>
+    {heroImage && <img width="100%" height={360} src={heroImage} alt={title} />}
+    <h1 class="title">{title}</h1>
     {
-      heroImage && (
-        <img
-          width={720}
-          height={360}
-          src={heroImage}
-          loading="lazy"
-          alt={title}
-        />
+      pubDate && (
+        <time>
+          {Intl.DateTimeFormat('ja-JP', date_options).format(new Date(pubDate))}
+        </time>
       )
     }
-    <h1 class="title">{title}</h1>
-    {pubDate && <time>{pubDate}</time>}
     {
       updatedDate && (
         <div>
-          Last updated on <time>{updatedDate}</time>
+          Last updated on
+          <time>
+            {Intl.DateTimeFormat('ja-JP', date_options).format(
+              new Date(updatedDate)
+            )}
+          </time>
         </div>
       )
     }
