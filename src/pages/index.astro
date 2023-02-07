@@ -30,28 +30,31 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
     <h2 class="text-2xl font-bold">NEWS</h2>
     <ul>
       {
-        posts.map((post) => (
-          <li class="border-zinc-900 first:border-t dark:border-white">
-            <a href={post.url} class="w-full">
-              <BlogCard>
-                <div class="flex">
-                  <time datetime={post.frontmatter.pubDate} class="w-44">
-                    {new Date(post.frontmatter.pubDate).toLocaleDateString(
-                      'en-us',
-                      {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric'
-                      }
-                    )}
-                  </time>
+        posts.map((post, index) => {
+          if (index > 3) return
+          return (
+            <li class="border-zinc-900 first:border-t dark:border-white">
+              <a href={post.url} class="w-full">
+                <BlogCard>
+                  <div class="flex">
+                    <time datetime={post.frontmatter.pubDate} class="w-44">
+                      {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                        'en-us',
+                        {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric'
+                        }
+                      )}
+                    </time>
 
-                  {post.frontmatter.title}
-                </div>
-              </BlogCard>
-            </a>
-          </li>
-        ))
+                    {post.frontmatter.title}
+                  </div>
+                </BlogCard>
+              </a>
+            </li>
+          )
+        })
       }
     </ul>
   </section>

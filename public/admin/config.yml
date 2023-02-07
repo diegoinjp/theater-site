@@ -25,3 +25,20 @@ collections:
       - { label: 'pubDate', name: 'pubDate', widget: 'datetime' }
       - { label: 'heroImage', name: 'heroImage', widget: 'image' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'about' # Used in routes, e.g., /admin/collections/blog
+    label: 'About' # Used in the UI
+    folder: 'src/pages/' # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {
+          label: 'layout',
+          name: 'layout',
+          widget: 'hidden',
+          default: '../../layouts/BlogPost.astro'
+        }
+      - { label: 'title', name: 'title', widget: 'string' }
+      - { label: 'description', name: 'description', widget: 'string' }
+      - { label: 'updatedDate', name: 'updatedDate', widget: 'datetime' }
+      - { label: 'heroImage', name: 'heroImage', widget: 'image' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
