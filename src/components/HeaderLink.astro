@@ -11,11 +11,11 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '')
   href={href}
   class={`${
     isActive && 'text-red-600 dark:text-red-300'
-  } relative transition-all group hover:text-red-600`}
+  } relative transition-all group hover:text-red-600 dark:hover:text-red-300`}
   {...props}
 >
   <slot />
   <span
-    class="hidden md:block absolute -bottom-2 left-0 w-0 h-1 transition-all bg-black group-hover:bg-red-600 group-hover:w-full"
+    class="absolute -bottom-2 left-0 hidden h-1 w-0 bg-black transition-all group-hover:w-full group-hover:bg-red-600 md:block"
   ></span>
 </a>

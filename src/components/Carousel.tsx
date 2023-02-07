@@ -74,7 +74,7 @@ CarouselProps) => {
               height: `${height}`
             }}
             class="relative min-w-full items-center justify-center transition duration-300">
-            <div class="absolute bottom-0 left-0 rounded-tr-lg bg-gray-300 py-2 px-4 text-lg font-semibold uppercase group-hover:bg-yellow-300">
+            <div class="dark:bg absolute bottom-0 left-0 rounded-tr-lg bg-gray-100 py-2 px-4 text-lg font-semibold uppercase text-zinc-900 group-hover:bg-yellow-300">
               {post.title}
             </div>
             <img

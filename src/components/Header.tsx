@@ -56,6 +56,7 @@ const Header = ({ title, breakpoint = 768, ...props }: MenuProps) => {
                 isOpen() ? 'w-full' : 'w-0'
               } z-30 grid h-full place-items-center overflow-hidden bg-white/90 backdrop-blur-lg transition-all duration-300 dark:bg-black/90 md:hidden`}>
               <button
+                aria-label="close"
                 class={`${isOpen() ? 'absolute' : 'hidden'} top-4 right-4 z-30`}
                 onClick={() => setIsOpen(false)}>
                 <svg
@@ -73,7 +74,10 @@ const Header = ({ title, breakpoint = 768, ...props }: MenuProps) => {
               </div>
             </div>
             <ThemeIcon />
-            <button class="md:hidden" onClick={() => setIsOpen(true)}>
+            <button
+              aria-label="open"
+              class="md:hidden"
+              onClick={() => setIsOpen(true)}>
               <svg
                 class="fill-zinc-900 dark:fill-white"
                 xmlns="http://www.w3.org/2000/svg"

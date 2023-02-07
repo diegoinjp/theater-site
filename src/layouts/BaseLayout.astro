@@ -42,11 +42,7 @@ const { title, carouselContent = [] } = Astro.props as BaseProps
         </Header>
         {
           carouselContent && (
-            <Carousel
-              posts={carouselContent}
-              height="50vh"
-              client:only="solid"
-            />
+            <Carousel posts={carouselContent} height="50vh" client:load />
           )
         }
         <div class="p-5">
