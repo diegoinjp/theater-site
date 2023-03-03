@@ -12,3 +12,5 @@ export const date_options: Intl.DateTimeFormatOptions = {
   minute: 'numeric',
   weekday: 'narrow'
 }
+
+export const maxSize = 'max-w-[65rem]'

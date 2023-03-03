@@ -1,46 +1,47 @@
 ---
-import { date_options } from '../config'
-import BaseLayout from './BaseLayout.astro'
+  import Section from '../components/Section.astro'
+  import { date_options } from '../config'
+  import BaseLayout from './BaseLayout.astro'
 
-export interface BlogProps {
-  content: {
-    title: string
-    description: string
-    pubDate?: string
-    updatedDate?: string
-    heroImage?: string
+  export interface BlogProps {
+    content: {
+      title: string
+      description: string
+      pubDate?: string
+      updatedDate?: string
+      heroImage?: string
+    }
   }
-}
 
-const {
-  content: { title, description, pubDate, updatedDate, heroImage }
-} = Astro.props as BlogProps
+  const {
+    content: { title, description, pubDate, updatedDate, heroImage }
+  } = Astro.props as BlogProps
 ---
 
 <BaseLayout title={title} description={description}>
-  <article>
+  <Section>
     {heroImage && <img width="100%" height={360} src={heroImage} alt={title} />}
     <h1 class="title">{title}</h1>
     {
-      pubDate && (
-        <time>
-          {Intl.DateTimeFormat('ja-JP', date_options).format(new Date(pubDate))}
-        </time>
-      )
+    pubDate && (
+    <time>
+      {Intl.DateTimeFormat('ja-JP', date_options).format(new Date(pubDate))}
+    </time>
+    )
     }
     {
-      updatedDate && (
-        <div>
-          Last updated on
-          <time>
-            {Intl.DateTimeFormat('ja-JP', date_options).format(
-              new Date(updatedDate)
-            )}
-          </time>
-        </div>
-      )
+    updatedDate && (
+    <div>
+      Last updated on
+      <time>
+        {Intl.DateTimeFormat('ja-JP', date_options).format(
+        new Date(updatedDate)
+        )}
+      </time>
+    </div>
+    )
     }
     <hr />
     <slot />
-  </article>
+  </Section>
 </BaseLayout>

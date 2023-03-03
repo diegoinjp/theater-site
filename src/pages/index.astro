@@ -1,119 +1,84 @@
 ---
 import { postsContent } from '../api/posts'
-import BlogCard from '../components/BlogCard.astro'
-import { SITE_DESCRIPTION } from '../config'
+import BlogList from '../components/BlogList.astro'
+import Section from '../components/Section.astro'
+import Title from '../components/Title.astro'
+import { SITE_DESCRIPTION, SITE_TITLE } from '../config'
 import BaseLayout from '../layouts/BaseLayout.astro'
+import type { BlogProps } from '../utils/types'
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).valueOf() -
     new Date(a.frontmatter.pubDate).valueOf()
-)
+) as BlogProps[]
 ---
 
 <BaseLayout title={SITE_DESCRIPTION} carouselContent={postsContent}>
-  <h1>🧑‍🚀 Hello, Astronaut!</h1>
-  <p>
-    Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
-    template. This template serves as a lightweight, minimally-styled starting point
-    for anyone looking to build a personal website, blog, or portfolio with Astro.
-  </p>
-  <p>
-    This template comes with a few integrations already configured in your
-    <code>astro.config.mjs</code> file. You can customize your setup with
-    <a href="https://astro.build/integrations">Astro Integrations</a> to add tools
-    like Tailwind, React, or Vue to your project.
-  </p>
-  <p>Here are a few ideas on how to get started with the template:</p>
-  <section class="my-6">
-    <h2 class="text-2xl font-bold">NEWS</h2>
-    <ul>
-      {
-        posts.map((post, index) => {
-          if (index > 3) return
-          return (
-            <li class="border-zinc-900 first:border-t dark:border-white">
-              <a href={post.url} class="w-full">
-                <BlogCard>
-                  <div class="flex">
-                    <time datetime={post.frontmatter.pubDate} class="w-44">
-                      {new Date(post.frontmatter.pubDate).toLocaleDateString(
-                        'en-us',
-                        {
-                          year: 'numeric',
-                          month: 'short',
-                          day: 'numeric'
-                        }
-                      )}
-                    </time>
+  <Section index={1}>
+    <Title>{SITE_TITLE}</Title>
+    <p>東京メトロ 東西線　神楽坂駅から徒歩40歩。駅近くでゲストも安心・便利</p>
+    <p>
+      演劇、ダンス、音楽、結婚式の2次会や各種イベント、発表会、個展など多様にご利用いただけます！
+    </p>
 
-                    {post.frontmatter.title}
-                  </div>
-                </BlogCard>
-              </a>
-            </li>
-          )
-        })
-      }
-    </ul>
-  </section>
-  <div>
-    <!-- <iframe
-      src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23E4C441&ctz=Asia%2FTokyo&showNav=1&showPrint=0&src=ZGllZ28udnBkYUBnbWFpbC5jb20&src=MmpnZnJ2dDFqMDVlNTJ1NnJ1bWtvYTA2MjRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=N2I1MWNhNzU2NjhjNjc3OTFmZTIxYzJmYzEzMzQyMWZjMDNjYjEyOWVmYzZmNmE0MzIwNzJhOGJkMzAwZDBjNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y2xhc3Nyb29tMTE1NDU4MTgwNDUwODY2MTQ3NDM4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=c21xc25jaHN0YzM3MDZlMnNyMjdiOG9icDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MDVsYXF0dW5uM2xkcDRvZDVibmxwaWppdmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZHNjZzczZnZyMHFqY241YWU5MmE5ZHM5OG9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=c2V1bGhsMWpndXZmY21hdW9hdjc4MG1odDRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=c3ByaDJuN25oMW82Z21zYnQ2ajdqN2tibmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=aTY1OXQwMGtlaGZjbWJhdDdiOGNoOXJ2ZGdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZjQ4dWwyNW0zYjNjdDFjczdobDF1MjhmNGNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%233F51B5&color=%23A79B8E&color=%23EF6C00&color=%23E4C441&color=%23616161&color=%23B39DDB&color=%23939eaf&color=%23795548&color=%23D81B60&color=%23F09300&color=%23AD1457&color=%237986CB"
-      style="border:solid 1px #777"
-      width="550"
-      height="600"
-      frameborder="0"
-      scrolling="no"></iframe> -->
-    <iframe
-      src="https://embed.styledcalendar.com/#y4yrTM1XYYuobXhCMmWE"
-      title="Styled Calendar"
-      class="styled-calendar-container"
-      style="width: 100%; border: none;"
-      data-cy="calendar-embed-iframe"></iframe>
-    <script
-      async
-      type="module"
-      src="https://embed.styledcalendar.com/assets/parent-window.js"
-    ></script>
-  </div>
-  <div>
-    <a
-      class="twitter-timeline"
-      data-width="300"
-      data-height="500"
-      href="https://twitter.com/diego_injp?ref_src=twsrc%5Etfw"
-      >Tweets by diego_injp</a
-    >
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
-    ></script>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
-    ></script>
-  </div>
+    <Title>アクセス</Title>
+    <p>最寄り駅：東京メトロ東西線“神楽坂駅”下車</p>
+    <p>
+      ｢神楽坂方面改札（1a出口）｣の階段を上がり、向かって右方向に15ｍ程歩くと路地があります。
+      正面角1階が「日本料理 清久仁」様の白いビルの地下一階がメルシアークです。
+    </p>
+    <p>オレンジ色のテントがかかっているドアが入口です。</p>
+    ※駐車場はございません。お車にてご来場の際は近隣のパーキングをご利用ください
+  </Section>
+  <Section index={2}>
+    <BlogList limit={4} posts={posts} />
+  </Section>
+  <Section index={3}>
+    <div>
+      <a
+        class="twitter-timeline"
+        data-width="300"
+        data-height="500"
+        href="https://twitter.com/diego_injp?ref_src=twsrc%5Etfw"
+        >Tweets by diego_injp</a
+      >
+      <script
+        async
+        src="https://platform.twitter.com/widgets.js"
+        charset="utf-8"
+      ></script>
+      <script
+        async
+        src="https://platform.twitter.com/widgets.js"
+        charset="utf-8"
+      ></script>
+    </div>
 
-  <div>
-    <iframe
-      title="Shimokitazawa access"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12966.639571714728!2d139.68402143567454!3d35.66075024966956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f36b9a296133%3A0x66c43a9f356d5e5d!2sShimo-Kitazawa%20Station!5e0!3m2!1sen!2sjp!4v1675686490648!5m2!1sen!2sjp"
-      width="100%"
-      height="450"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-  <p>
-    Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-      >read the docs</a
-    > or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-  </p>
-  <p>
-    Looking for a blog template with a bit more personality? Check out <a
-      href="https://github.com/Charca/astro-blog-template"
-      >astro-blog-template</a
-    > by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-  </p>
+    <div>
+      <iframe
+        title="Shimokitazawa access"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12966.639571714728!2d139.68402143567454!3d35.66075024966956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f36b9a296133%3A0x66c43a9f356d5e5d!2sShimo-Kitazawa%20Station!5e0!3m2!1sen!2sjp!4v1675686490648!5m2!1sen!2sjp"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <p>
+      Have fun! If you get stuck, remember to <a
+        href="https://docs.astro.build/">read the docs</a
+      > or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
+    </p>
+    <p>
+      Looking for a blog template with a bit more personality? Check out <a
+        href="https://github.com/Charca/astro-blog-template"
+        >astro-blog-template</a
+      > by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+    </p>
+  </Section>
 </BaseLayout>
 
 <script>

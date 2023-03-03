@@ -1,17 +1,17 @@
 ---
 import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header'
-import Footer from '../components/Footer.astro'
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
 import Carousel from '../components/Carousel'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header'
 import HeaderLink from '../components/HeaderLink.astro'
+import { SITE_DESCRIPTION, SITE_TITLE } from '../config'
 
 export interface BaseProps {
   title: string
   carouselContent?: any[]
 }
 
-const { title, carouselContent = [] } = Astro.props as BaseProps
+const { title, carouselContent } = Astro.props as BaseProps
 ---
 
 <!DOCTYPE html>
@@ -22,32 +22,27 @@ const { title, carouselContent = [] } = Astro.props as BaseProps
       description={SITE_DESCRIPTION}
     />
   </head>
+
   <body
-    class="grid w-full place-items-center bg-gradient-to-tr from-violet-100 to-violet-50 dark:from-zinc-800 dark:to-zinc-700"
+    class="grid w-full place-items-center bg-gradient-to-tr from-violet-100 to-violet-50 dark:from-zinc-800 dark:to-zinc-700 lg:text-lg"
   >
     <main
-      class="flex min-h-screen w-full flex-col justify-between bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white lg:w-[56rem]"
+      class="flex min-h-screen w-full flex-col justify-between bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white"
     >
       <div class="">
         <Header client:only="solid" title={SITE_TITLE}>
           <HeaderLink href="/">Home</HeaderLink>
-          <HeaderLink href="/blog">Blog</HeaderLink>
-          <HeaderLink href="/about">About</HeaderLink>
-          <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">
-            Twitter
-          </HeaderLink>
-          <HeaderLink href="https://github.com/withastro/astro" target="_blank">
-            GitHub
-          </HeaderLink>
+          <HeaderLink href="/news">News</HeaderLink>
+          <HeaderLink href="/info">Info</HeaderLink>
+          <HeaderLink href="/members">Members</HeaderLink>
+          <HeaderLink href="/schedule">Schedule</HeaderLink>
         </Header>
         {
           carouselContent && (
-            <Carousel posts={carouselContent} height="50vh" client:load />
+            <Carousel posts={carouselContent} height="80vh" client:load />
           )
         }
-        <div class="p-5">
-          <slot />
-        </div>
+        <slot />
         <Footer />
       </div>
     </main>

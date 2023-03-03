@@ -1,4 +1,5 @@
 import { children, createEffect, createSignal, JSX } from 'solid-js'
+import { maxSize } from '../config'
 import ThemeIcon from './ThemeIcon'
 
 export interface MenuProps {
@@ -23,6 +24,9 @@ const Header = ({ title, breakpoint = 768, ...props }: MenuProps) => {
   const [windowSize, setWindowSize] = createSignal(window.innerWidth)
   const [isOpen, setIsOpen] = createSignal(false)
 
+  const widthOpen = () => (isOpen() ? 'w-full' : 'w-0')
+  const menuOpen = () => (isOpen() ? 'absolute' : 'hidden')
+
   const slot = children(() => props.children)
 
   createEffect(() => {
@@ -38,13 +42,16 @@ const Header = ({ title, breakpoint = 768, ...props }: MenuProps) => {
   })
 
   return (
-    <header class="flex w-full items-center justify-between p-5">
-      <a href="/" class="font-bold">
+    <header
+      class={`${maxSize} m-auto flex h-16 w-full items-center justify-between px-7`}>
+      <a href="/" class="text-xl font-semibold">
         {title}
       </a>
       <nav class="flex items-center gap-6">
         {windowSize() > breakpoint ? (
-          <div id="desktop-menu" class="hidden gap-6 md:flex">
+          <div
+            id="desktop-menu"
+            class="hidden h-16 items-center md:flex lg:text-lg">
             {slot()}
             <ThemeIcon />
           </div>
@@ -52,12 +59,10 @@ const Header = ({ title, breakpoint = 768, ...props }: MenuProps) => {
           <>
             <div
               id="mobile-menu"
-              class={`fixed top-0 right-0 ${
-                isOpen() ? 'w-full' : 'w-0'
-              } z-30 grid h-full place-items-center overflow-hidden bg-white/90 backdrop-blur-lg transition-all duration-300 dark:bg-black/90 md:hidden`}>
+              class={`fixed top-0 right-0 ${widthOpen()} z-30 grid h-full place-items-center overflow-hidden bg-white/90 backdrop-blur-lg transition-all duration-300 dark:bg-black/90 md:hidden`}>
               <button
                 aria-label="close"
-                class={`${isOpen() ? 'absolute' : 'hidden'} top-4 right-4 z-30`}
+                class={`${menuOpen()} top-4 right-4 z-30`}
                 onClick={() => setIsOpen(false)}>
                 <svg
                   class="h-10 w-10 fill-red-400 dark:fill-white"
@@ -69,7 +74,7 @@ const Header = ({ title, breakpoint = 768, ...props }: MenuProps) => {
                   <path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path>
                 </svg>
               </button>
-              <div class="flex flex-col gap-12 text-center text-3xl">
+              <div class="flex flex-col items-center gap-12 text-3xl">
                 {slot()}
               </div>
             </div>

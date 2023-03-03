@@ -1,0 +1,54 @@
+---
+import type { BlogProps } from '../utils/types'
+import BlogCard from './BlogCard.astro'
+
+export type Props = {
+  limit?: number
+  posts: BlogProps[]
+}
+
+const { limit, posts } = Astro.props as Props
+---
+
+<div class="my-6">
+  <h2 class="px-6 text-2xl font-bold">NEWS</h2>
+  <ul class="mt-6">
+    {
+      posts.map((post, index) => {
+        if (limit && index >= limit) return
+        return (
+          <li class="border-zinc-900 first:border-t dark:border-white">
+            <a href={post.url} class="w-full">
+              <BlogCard>
+                <div class="flex">
+                  <time datetime={post.frontmatter.pubDate} class="w-44">
+                    {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                      'en-us',
+                      {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                      }
+                    )}
+                  </time>
+                  {post.frontmatter.title}
+                </div>
+              </BlogCard>
+            </a>
+          </li>
+        )
+      })
+    }
+    {
+      limit && (
+        <li class="border-zinc-900 bg-violet-100 first:border-t dark:border-white dark:bg-violet-800">
+          <BlogCard>
+            <a href="/news" class="flex w-full justify-center">
+              See more
+            </a>
+          </BlogCard>
+        </li>
+      )
+    }
+  </ul>
+</div>

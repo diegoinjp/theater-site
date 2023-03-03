@@ -1,0 +1,19 @@
+---
+import BlogList from '../components/BlogList.astro'
+import Section from '../components/Section.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import type { BlogProps } from '../utils/types'
+
+// Use Astro.glob() to fetch all posts, and then sort them by date.
+const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
+) as BlogProps[]
+---
+
+<BaseLayout title="News">
+  <Section>
+    <BlogList posts={posts} />
+  </Section>
+</BaseLayout>
