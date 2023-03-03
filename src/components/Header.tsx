@@ -38,13 +38,13 @@ const Header = ({ title, breakpoint = 768, ...props }: MenuProps) => {
   })
 
   return (
-    <header class="flex w-full items-center justify-between p-5">
-      <a href="/" class="font-bold">
+    <header class="m-auto flex w-full items-center justify-between p-5 lg:max-w-[60rem]">
+      <a href="/" class="text-xl font-semibold">
         {title}
       </a>
       <nav class="flex items-center gap-6">
         {windowSize() > breakpoint ? (
-          <div id="desktop-menu" class="hidden gap-6 md:flex">
+          <div id="desktop-menu" class="hidden gap-7 md:flex lg:text-lg">
             {slot()}
             <ThemeIcon />
           </div>

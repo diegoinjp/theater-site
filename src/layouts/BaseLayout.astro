@@ -26,7 +26,7 @@ const { title, carouselContent = [] } = Astro.props as BaseProps
     class="grid w-full place-items-center bg-gradient-to-tr from-violet-100 to-violet-50 dark:from-zinc-800 dark:to-zinc-700"
   >
     <main
-      class="flex min-h-screen w-full flex-col justify-between bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white lg:w-[56rem]"
+      class="flex min-h-screen w-full flex-col justify-between bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white"
     >
       <div class="">
         <Header client:only="solid" title={SITE_TITLE}>
@@ -42,10 +42,10 @@ const { title, carouselContent = [] } = Astro.props as BaseProps
         </Header>
         {
           carouselContent && (
-            <Carousel posts={carouselContent} height="50vh" client:load />
+            <Carousel posts={carouselContent} height="60vh" client:load />
           )
         }
-        <div class="p-5">
+        <div class="m-auto p-5 lg:max-w-[60rem]">
           <slot />
         </div>
         <Footer />

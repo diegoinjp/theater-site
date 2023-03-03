@@ -27,7 +27,7 @@ const Carousel = ({
   height = '20rem',
   duration = 7,
   autoPlay = true,
-  slideNumber = 5
+  slideNumber = 4
 }: // bullets = true,
 CarouselProps) => {
   const [currentIndex, setCurrentIndex] = createSignal(0)
@@ -74,11 +74,11 @@ CarouselProps) => {
               height: `${height}`
             }}
             class="relative min-w-full items-center justify-center transition duration-300">
-            <div class="dark:bg absolute bottom-0 left-0 rounded-tr-lg bg-gray-100 py-2 px-4 text-lg font-semibold uppercase text-zinc-900 group-hover:bg-yellow-300">
+            <div
+              class={`"dark:bg group-hover:bg-yellow-300" absolute bottom-0 left-0 rounded-tr-lg bg-gray-100 py-2 px-4 text-lg font-semibold uppercase text-zinc-900`}>
               {post.title}
             </div>
             <img
-              loading="lazy"
               src={post.imgUrl}
               alt={post.title}
               style={{ height: `${height}` }}
