@@ -7,3 +7,14 @@ export type PostProps = {
   tags?: string[]
   imgUrl?: string
 }
+
+export type BlogProps = {
+  frontmatter: {
+    title: string
+    description: string
+    pubDate: string
+    updatedDate?: string
+    heroImage?: string
+  }
+  url: string
+}

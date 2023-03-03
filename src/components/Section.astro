@@ -1,0 +1,20 @@
+---
+import { maxSize } from '../config'
+
+export interface ISection {
+  index?: number
+}
+const { index = 1 } = Astro.props as ISection
+---
+
+<div
+  class={`w-full ${
+    index % 2 === 0
+      ? 'bg-white dark:bg-zinc-900'
+      : 'bg-violet-300 dark:bg-violet-700'
+  }`}
+>
+  <div class={`${maxSize} m-auto p-5 pt-10 pb-14`}>
+    <slot />
+  </div>
+</div>

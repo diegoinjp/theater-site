@@ -1,16 +1,16 @@
 import { createEffect, createSignal } from 'solid-js'
 
-const initializeTheme = () => {
-  let theme
-  if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-    theme = localStorage.getItem('theme') as 'light' | 'dark'
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    theme = 'dark'
-  } else {
-    theme = 'light'
-  }
-  return theme
-}
+// const initializeTheme = () => {
+//   let theme
+//   if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+//     theme = localStorage.getItem('theme') as 'light' | 'dark'
+//   } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+//     theme = 'dark'
+//   } else {
+//     theme = 'light'
+//   }
+//   return theme
+// }
 
 const ThemeIcon = () => {
   const [theme, setTheme] = createSignal<string>(
@@ -31,7 +31,7 @@ const ThemeIcon = () => {
   return (
     <div
       id="themeToggle"
-      class="inline-block cursor-pointer fill-zinc-900 dark:fill-white"
+      class="ml-5 inline-block cursor-pointer fill-zinc-900 dark:fill-white"
       onClick={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}>
       <svg width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         {theme() === 'dark' ? (
