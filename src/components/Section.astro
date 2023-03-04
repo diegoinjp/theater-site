@@ -1,13 +1,19 @@
 ---
-export interface ISection {
+import Title from './Title.astro'
+
+export type ISection = {
   index?: number
+  isCenter?: boolean
+  title?: string
+  subtitle?: string
 }
-const { index = 1 } = Astro.props as ISection
+const { index = 1, isCenter = false, title, sub } = Astro.props as ISection
 const indexColor = index % 2 === 0 ? 'bg-white dark:bg-back-dark' : 'bg-main-light dark:bg-main-darker'
 ---
 
 <div class={`w-full ${indexColor}`}>
-  <div class="m-auto flex max-w-layout flex-col gap-6 p-5 pt-10 pb-14">
+  <div class={`m-auto flex ${isCenter ? 'items-center' : ''} max-w-layout flex-col gap-6 p-5 pt-10 pb-14`}>
+    {title && <Title sub={sub}>{title}</Title>}
     <slot />
   </div>
 </div>

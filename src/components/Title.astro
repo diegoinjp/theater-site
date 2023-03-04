@@ -1,4 +1,12 @@
-<h1 class="text-3xl font-bold w-full my-6">
-  ※
-  <slot />
-</h1>
+---
+const { sub } = Astro.props
+---
+
+<div class="my-6">
+  <p>
+    <span class="mr-4 text-3xl font-bold md:text-4xl">
+      <slot />
+    </span>
+    <span class="font-light text-main-dark dark:text-main-light">{sub}</span>
+  </p>
+</div>

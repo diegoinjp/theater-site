@@ -1,0 +1,43 @@
+---
+import Section from '../components/Section.astro'
+import { SITE_TITLE } from '../config'
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout title="ACCESS">
+  <Section title={SITE_TITLE}>
+    <div>
+    <p>〒162-0805 東京都新宿区矢来町 112番地第二松下ビルB1F</p>
+      <p>TEL: 03-4384-3843 FAX:03-4384-3843</p>
+      <p>mail: info@tsuki.com</p>
+      <p>キャパシティ（座席数）５０～８０席</p>
+      <div class="text-center mt-6">
+        <p>最寄り駅：東京メトロ東西線“神楽坂駅”下車</p>
+  
+        <p>｢神楽坂方面改札（1a出口）｣の階段を上がり、向かって右方向に15m程歩くと路地があります。
+        正面角1階が「日本料理 清久仁」様の白いビルの地下一階がメルシアークです。
+        オレンジ色のテントがかかっているドアが入口です。</p>
+        
+        <p>※駐車場はございません。お車にてご来場の際は近隣のパーキングをご利用ください。</p>
+      </div>
+    </div>
+  </Section>
+  <Section index={2}>
+      <iframe
+        title="Shimokitazawa access"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12966.639571714728!2d139.68402143567454!3d35.66075024966956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f36b9a296133%3A0x66c43a9f356d5e5d!2sShimo-Kitazawa%20Station!5e0!3m2!1sen!2sjp!4v1675686490648!5m2!1sen!2sjp"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </Section>
+  <Section isCenter={true}>
+    <p>東京メトロ東西線　出口１の階段を上がります</p>
+    <p>地上に出たら、右（さわやか信用金庫の方）へ向かって歩く</p>
+    <p>こんな風景から</p>
+    <p>「AMERICAN DINER」の看板右へ曲がる</p>
+    <p>橙色のテント屋根が、劇場入り口</p>
+  </Section>
+</BaseLayout>

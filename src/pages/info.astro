@@ -1,0 +1,22 @@
+---
+import Section from '../components/Section.astro'
+import TimeLine from '../components/TimeLine.astro'
+import { instructions } from '../config'
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout title="INFO">
+  <Section index={1} title="情報&予約の案内">
+    <p>
+      今この瞬間自分が自分でいられる事、それを支えてくれる方々への感謝、また、劇場と集団、芸術と社会、
+      現在と未来を繋ぐ架け橋の場でありたい、そんな願いが込められております。
+      変わらない大切なものと共に、ルールを守り、当劇場を有意義に利用していただきたく思います。
+      お気づきの点や疑問点、ご相談事等ございましたら、お気軽にお尋ね下さい。
+    </p>
+  </Section>
+  <Section index="2" isCenter="true" title="お申込方法・お申込後の流れ">
+    <div>
+      {instructions.map((item) => <TimeLine title={item.title} subtitle={item.subtitle} />)}
+    </div>
+  </Section>
+</BaseLayout>
