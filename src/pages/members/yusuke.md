@@ -12,7 +12,7 @@ hobby: 演劇
 skill: 野球、ジャグリング、イタリア料理
 twitter: nodi
 instagram: nodayu
-otherSns: diego_injp
+otherSns: nodayu
 imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-03.jpg?tr=w-auto
 ---
 
