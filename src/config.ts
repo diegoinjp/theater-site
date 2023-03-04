@@ -20,9 +20,9 @@ export const modalBg = 'fixed w-full h-screen bg-black/50 grid place-items-cente
 
 // export const links: LinkType[] = ['home', 'news', 'info', 'members', 'schedule']
 export const links: LinkType[] = [
-  { url: '/', label: 'home' },
-  { url: '/news', label: 'news' },
-  { url: '/info', label: 'info' },
-  { url: '/members', label: 'members' },
-  { url: '/schedule', label: 'schedule' }
+  { url: '/', label: 'Home' },
+  { url: '/news', label: 'News' },
+  { url: '/info', label: 'Info' },
+  { url: '/members', label: 'Members' },
+  { url: '/schedule', label: 'Schedule' }
 ]

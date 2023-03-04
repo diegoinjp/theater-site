@@ -77,7 +77,7 @@ CarouselProps) => {
                 transform: `translate(-${currentIndex() * 100}%)`
               }}
               class="relative min-w-full items-center justify-center transition duration-300">
-              <div class="dark:bg absolute bottom-0 left-0 rounded-tr-lg bg-gray-100 py-2 px-4 text-lg font-semibold uppercase text-back-dark group-hover:bg-yellow-300">
+              <div class="dark:bg absolute bottom-0 left-0 rounded-tr-lg bg-gray-100 py-2 px-4 text-lg font-semibold uppercase text-back-dark group-hover:bg-main-light">
                 {post.title}
               </div>
               <img src={post.imgUrl} alt={post.title} style={{ height: `${height}` }} class="w-full object-cover" />
