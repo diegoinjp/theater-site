@@ -53,7 +53,7 @@ const members = (await Astro.glob('../pages/members/*.{md,mdx}')).sort(
             <p><span class="font-bold">特技：</span> {skill}</p>
             <p><span class="font-bold">趣味：</span> {hobby}</p>
           </div>
-          <div class="flex w-full justify-around gap-4 md:justify-between">
+          <div class="flex w-full flex-wrap justify-around gap-4 md:justify-between">
             <a href={`https://twitter.com/${twitter}`} target="_blank" class="flex items-center gap-1"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
