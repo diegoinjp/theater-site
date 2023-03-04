@@ -1,17 +1,17 @@
 ---
-layout: '../../layouts/MemberLayout.astro'
+layout: ../../layouts/MemberLayout.astro
 name: ディエゴ
 nameReading: でぃえご
 nameRomaji: Diego
-order: 09
+order: 9
 role: 監督・演出・役者
-height: 165
-birthplace: 京都
+height: 175
+birthplace: ベネズエラ
 bloodType: O
 hobby: 演劇
-skill: 野球、ジャグリング、イタリア料理
+skill: 映像・編集・カラオケ
 twitter: diego_injp
-instagram: diego_injp
+instagram: vallejin
 otherSns: diego_injp
 imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-09.jpg?tr=w-auto
 ---
