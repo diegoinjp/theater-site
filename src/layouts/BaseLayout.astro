@@ -30,7 +30,7 @@ const { title, carouselContent } = Astro.props as BaseProps
         <Header client:only="solid" title={SITE_TITLE}>
           {links.map((link) => <HeaderLink href={link.url}>{link.label.toUpperCase()}</HeaderLink>)}
         </Header>
-        {carouselContent && <Carousel posts={carouselContent} height="75vh" client:load />}
+        {carouselContent && <Carousel posts={carouselContent} height="70vh" client:load />}
         <slot />
         <Footer />
       </div>
