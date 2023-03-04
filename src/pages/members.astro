@@ -1,6 +1,4 @@
 ---
-import MemberCard from '../components/MemberCard'
-import Modal from '../components/Modal'
 import Section from '../components/Section.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import type { MemberType } from '../utils/types'
@@ -8,13 +6,29 @@ import type { MemberType } from '../utils/types'
 const members = (await Astro.glob('./members/*.{md,mdx}')).sort(
   (a, b) => a.frontmatter.order.valueOf() - b.frontmatter.order.valueOf()
 ) as MemberType[]
-
-console.log('astro', members)
 ---
 
 <BaseLayout title="メンバー">
   <Section>
-    <MemberCard members={members} client:load />
-    <Modal client:load />
+    <div class="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
+      {
+        members.map((member, i) => {
+          return (
+            <div class="group relative cursor-pointer overflow-hidden opacity-90 transition-all hover:opacity-100">
+              <a href={member.url}>
+                <img
+                  src={member.frontmatter.imgUrl}
+                  alt={member.frontmatter.nameRomaji}
+                  class="scale-110 transform transition-all group-hover:scale-100"
+                />
+                <div class="absolute bottom-0 left-0 transform rounded-tr-lg bg-black/40 p-3 text-center text-sm text-white transition-all group-hover:w-full group-hover:text-xl">
+                  {member.frontmatter.name}
+                </div>
+              </a>
+            </div>
+          )
+        })
+      }
+    </div>
   </Section>
 </BaseLayout>

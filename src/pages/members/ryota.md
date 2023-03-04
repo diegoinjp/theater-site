@@ -1,5 +1,5 @@
 ---
-layout: '../members.astro'
+layout: '../../layouts/MemberLayout.astro'
 name: 近藤亮太
 nameReading: こんどうりょうた
 nameRomaji: Ryota Kondo
@@ -9,6 +9,7 @@ height: 165cm
 birthplace: 愛知
 bloodType: B型
 hobby: 演劇
+skill: 野球、ジャグリング、イタリア料理
 twitter: https://twitter.com/
 instagram: https://instagram.com
 otherSns: https://www.facebook.com/

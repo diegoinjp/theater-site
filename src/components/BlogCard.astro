@@ -1,9 +1,9 @@
 ---
 const { index } = Astro.props
 
-const indexColor = index && index % 2 !== 0 ? '' : 'bg-violet-100 dark:bg-violet-800'
+const indexColor = index && index % 2 !== 0 ? '' : 'bg-main-lighter dark:bg-main-dark'
 ---
 
-<div class={`w-full border-b border-zinc-900 py-4 dark:border-white md:px-4 ${indexColor}`}>
+<div class={`w-full border-b border-back-dark p-4 dark:border-white md:px-4 ${indexColor}`}>
   <slot />
 </div>

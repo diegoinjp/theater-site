@@ -1,5 +1,5 @@
 ---
-layout: '../members.astro'
+layout: '../../layouts/MemberLayout.astro'
 name: 野田祐介
 nameReading: のだゆうすけ
 nameRomaji: Yusuke Noda
@@ -9,6 +9,7 @@ height: 168cm
 birthplace: 京都
 bloodType: B型
 hobby: 演劇
+skill: 野球、ジャグリング、イタリア料理
 twitter: https://twitter.com/
 instagram: https://instagram.com
 otherSns: https://www.facebook.com/

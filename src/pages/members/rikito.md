@@ -1,5 +1,5 @@
 ---
-layout: '../members.astro'
+layout: '../../layouts/MemberLayout.astro'
 name: 太田力斗
 nameReading: おおたりきと
 nameRomaji: Rikito Ohta
@@ -9,6 +9,7 @@ height: 178cm
 birthplace: 京都
 bloodType: O型
 hobby: 演劇
+skill: 野球、ジャグリング、イタリア料理
 twitter: https://twitter.com/
 instagram: https://instagram.com
 otherSns: https://www.facebook.com/

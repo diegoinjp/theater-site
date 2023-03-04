@@ -1,5 +1,5 @@
 ---
-layout: '../members.astro'
+layout: '../../layouts/MemberLayout.astro'
 name: 植田茉莉花
 nameReading: うえだまりか
 nameRomaji: Marika Ueda
@@ -9,6 +9,7 @@ height: 165cm
 birthplace: 京都
 bloodType: O型
 hobby: 演劇
+skill: 野球、ジャグリング、イタリア料理
 twitter: https://twitter.com/
 instagram: https://instagram.com
 otherSns: https://www.facebook.com/

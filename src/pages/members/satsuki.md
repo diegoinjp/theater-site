@@ -1,5 +1,5 @@
 ---
-layout: '../members.astro'
+layout: '../../layouts/MemberLayout.astro'
 name: 佐々木皐介
 nameReading: ささきこうすけ
 nameRomaji: Kosuke Sasaki
@@ -9,6 +9,7 @@ height: 170cm
 birthplace: 平塚
 bloodType: A型
 hobby: 演劇
+skill: 野球、ジャグリング、イタリア料理
 twitter: https://twitter.com/
 instagram: https://instagram.com
 otherSns: https://www.facebook.com/

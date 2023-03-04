@@ -30,6 +30,7 @@ export type MemberType = {
     birthplace: string
     bloodType: string
     hobby: string
+    skill: string
     twitter: string
     instagram: string
     otherSns: string
@@ -40,7 +41,7 @@ export type MemberType = {
   url: string
 }
 
-export interface ModalContentType {
-  title: string
-  content: string
+export interface LinkType {
+  url: string
+  label: string
 }

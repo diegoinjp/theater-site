@@ -13,9 +13,7 @@ import { createEffect, createSignal } from 'solid-js'
 // }
 
 const ThemeIcon = () => {
-  const [theme, setTheme] = createSignal<string>(
-    localStorage.getItem('theme') ?? 'light'
-  )
+  const [theme, setTheme] = createSignal<string>(localStorage.getItem('theme') ?? 'light')
 
   createEffect(() => {
     const root = document.documentElement
@@ -31,7 +29,7 @@ const ThemeIcon = () => {
   return (
     <div
       id="themeToggle"
-      class="ml-5 inline-block cursor-pointer fill-zinc-900 dark:fill-white"
+      class="ml-5 inline-block cursor-pointer fill-back-dark dark:fill-white"
       onClick={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}>
       <svg width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         {theme() === 'dark' ? (
