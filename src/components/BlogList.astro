@@ -7,6 +7,8 @@ export type Props = {
   posts: BlogProps[]
 }
 
+const liStyle = 'border-zinc-900 first:border-t dark:border-white'
+
 const { limit, posts } = Astro.props as Props
 ---
 
@@ -17,19 +19,16 @@ const { limit, posts } = Astro.props as Props
       posts.map((post, index) => {
         if (limit && index >= limit) return
         return (
-          <li class="border-zinc-900 first:border-t dark:border-white">
+          <li class={liStyle}>
             <a href={post.url} class="w-full">
-              <BlogCard>
+              <BlogCard index={index}>
                 <div class="flex">
                   <time datetime={post.frontmatter.pubDate} class="w-44">
-                    {new Date(post.frontmatter.pubDate).toLocaleDateString(
-                      'en-us',
-                      {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric'
-                      }
-                    )}
+                    {new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric'
+                    })}
                   </time>
                   {post.frontmatter.title}
                 </div>
@@ -41,7 +40,7 @@ const { limit, posts } = Astro.props as Props
     }
     {
       limit && (
-        <li class="border-zinc-900 bg-violet-100 first:border-t dark:border-white dark:bg-violet-800">
+        <li class={liStyle}>
           <BlogCard>
             <a href="/news" class="flex w-full justify-center">
               See more

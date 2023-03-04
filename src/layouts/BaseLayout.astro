@@ -17,10 +17,7 @@ const { title, carouselContent } = Astro.props as BaseProps
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead
-      title={`${SITE_TITLE} | ${title}`}
-      description={SITE_DESCRIPTION}
-    />
+    <BaseHead title={`${SITE_TITLE} | ${title}`} description={SITE_DESCRIPTION} />
   </head>
 
   <body
@@ -37,11 +34,7 @@ const { title, carouselContent } = Astro.props as BaseProps
           <HeaderLink href="/members">Members</HeaderLink>
           <HeaderLink href="/schedule">Schedule</HeaderLink>
         </Header>
-        {
-          carouselContent && (
-            <Carousel posts={carouselContent} height="80vh" client:load />
-          )
-        }
+        {carouselContent && <Carousel posts={carouselContent} height="75vh" client:load />}
         <slot />
         <Footer />
       </div>

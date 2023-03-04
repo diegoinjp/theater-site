@@ -14,3 +14,5 @@ export const date_options: Intl.DateTimeFormatOptions = {
 }
 
 export const maxSize = 'max-w-[65rem]'
+
+export const modalBg = 'fixed w-full h-screen bg-black/50 grid place-items-center z-30 top-0 left-0'
