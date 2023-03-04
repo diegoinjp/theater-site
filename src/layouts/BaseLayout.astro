@@ -4,7 +4,7 @@ import Carousel from '../components/Carousel'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header'
 import HeaderLink from '../components/HeaderLink.astro'
-import { SITE_DESCRIPTION, SITE_TITLE } from '../config'
+import { links, SITE_DESCRIPTION, SITE_TITLE } from '../config'
 
 export interface BaseProps {
   title: string
@@ -17,31 +17,20 @@ const { title, carouselContent } = Astro.props as BaseProps
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead
-      title={`${SITE_TITLE} | ${title}`}
-      description={SITE_DESCRIPTION}
-    />
+    <BaseHead title={`${SITE_TITLE} | ${title}`} description={SITE_DESCRIPTION} />
   </head>
 
   <body
-    class="grid w-full place-items-center bg-gradient-to-tr from-violet-100 to-violet-50 dark:from-zinc-800 dark:to-zinc-700 lg:text-lg"
+    class="grid w-full place-items-center bg-gradient-to-tr from-main-lighter to-violet-50 dark:from-zinc-800 dark:to-zinc-700 lg:text-lg"
   >
     <main
-      class="flex min-h-screen w-full flex-col justify-between bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white"
+      class="flex min-h-screen w-full flex-col justify-between bg-white text-back-dark dark:bg-back-dark dark:text-white"
     >
       <div class="">
         <Header client:only="solid" title={SITE_TITLE}>
-          <HeaderLink href="/">Home</HeaderLink>
-          <HeaderLink href="/news">News</HeaderLink>
-          <HeaderLink href="/info">Info</HeaderLink>
-          <HeaderLink href="/members">Members</HeaderLink>
-          <HeaderLink href="/schedule">Schedule</HeaderLink>
+          {links.map((link) => <HeaderLink href={link.url}>{link.label.toUpperCase()}</HeaderLink>)}
         </Header>
-        {
-          carouselContent && (
-            <Carousel posts={carouselContent} height="80vh" client:load />
-          )
-        }
+        {carouselContent && <Carousel posts={carouselContent} height="75vh" client:load />}
         <slot />
         <Footer />
       </div>

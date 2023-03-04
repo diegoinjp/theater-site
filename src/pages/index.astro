@@ -9,53 +9,40 @@ import type { BlogProps } from '../utils/types'
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-  (a, b) =>
-    new Date(b.frontmatter.pubDate).valueOf() -
-    new Date(a.frontmatter.pubDate).valueOf()
+  (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 ) as BlogProps[]
 ---
 
 <BaseLayout title={SITE_DESCRIPTION} carouselContent={postsContent}>
   <Section index={1}>
-    <Title>{SITE_TITLE}</Title>
-    <p>東京メトロ 東西線　神楽坂駅から徒歩40歩。駅近くでゲストも安心・便利</p>
-    <p>
-      演劇、ダンス、音楽、結婚式の2次会や各種イベント、発表会、個展など多様にご利用いただけます！
-    </p>
+    <div>
+      <Title>{SITE_TITLE}</Title>
+      <p>東京メトロ 東西線　神楽坂駅から徒歩40歩。駅近くでゲストも安心・便利</p>
+      <p>演劇、ダンス、音楽、結婚式の2次会や各種イベント、発表会、個展など多様にご利用いただけます！</p>
 
-    <Title>アクセス</Title>
-    <p>最寄り駅：東京メトロ東西線“神楽坂駅”下車</p>
-    <p>
-      ｢神楽坂方面改札（1a出口）｣の階段を上がり、向かって右方向に15ｍ程歩くと路地があります。
-      正面角1階が「日本料理 清久仁」様の白いビルの地下一階がメルシアークです。
-    </p>
-    <p>オレンジ色のテントがかかっているドアが入口です。</p>
-    ※駐車場はございません。お車にてご来場の際は近隣のパーキングをご利用ください
+      <Title>アクセス</Title>
+      <p>最寄り駅：東京メトロ東西線“神楽坂駅”下車</p>
+      <p>
+        ｢神楽坂方面改札（1a出口）｣の階段を上がり、向かって右方向に15ｍ程歩くと路地があります。 正面角1階が「日本料理
+        清久仁」様の白いビルの地下一階がメルシアークです。
+      </p>
+      <p>オレンジ色のテントがかかっているドアが入口です。</p>
+      ※駐車場はございません。お車にてご来場の際は近隣のパーキングをご利用ください
+    </div>
   </Section>
   <Section index={2}>
-    <BlogList limit={4} posts={posts} />
-  </Section>
-  <Section index={3}>
-    <div>
+    <div class="flex flex-col items-center justify-around gap-4 md:flex-row">
+      <BlogList limit={4} posts={posts} />
       <a
         class="twitter-timeline"
         data-width="300"
         data-height="500"
-        href="https://twitter.com/diego_injp?ref_src=twsrc%5Etfw"
-        >Tweets by diego_injp</a
+        href="https://twitter.com/diego_injp?ref_src=twsrc%5Etfw">Tweets by diego_injp</a
       >
-      <script
-        async
-        src="https://platform.twitter.com/widgets.js"
-        charset="utf-8"
-      ></script>
-      <script
-        async
-        src="https://platform.twitter.com/widgets.js"
-        charset="utf-8"
-      ></script>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-
+  </Section>
+  <Section index={3}>
     <div>
       <iframe
         title="Shimokitazawa access"
@@ -68,14 +55,13 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <p>
-      Have fun! If you get stuck, remember to <a
-        href="https://docs.astro.build/">read the docs</a
-      > or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
+      Have fun! If you get stuck, remember to <a href="https://docs.astro.build/">read the docs</a> or <a
+        href="https://astro.build/chat">join us on Discord</a
+      > to ask questions.
     </p>
     <p>
       Looking for a blog template with a bit more personality? Check out <a
-        href="https://github.com/Charca/astro-blog-template"
-        >astro-blog-template</a
+        href="https://github.com/Charca/astro-blog-template">astro-blog-template</a
       > by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
     </p>
   </Section>

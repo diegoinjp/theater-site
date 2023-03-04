@@ -18,3 +18,30 @@ export type BlogProps = {
   }
   url: string
 }
+
+export type MemberType = {
+  frontmatter: {
+    name: string
+    nameReading: string
+    nameRomaji: string
+    order: number
+    role: string
+    height: string
+    birthplace: string
+    bloodType: string
+    hobby: string
+    skill: string
+    twitter: string
+    instagram: string
+    otherSns: string
+    imgUrl: string
+    description: string
+  }
+  description: string
+  url: string
+}
+
+export interface LinkType {
+  url: string
+  label: string
+}

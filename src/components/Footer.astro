@@ -1,9 +1,11 @@
 ---
-  import { SITE_TITLE } from "../config";
+import { SITE_TITLE } from '../config'
+import BlogCard from './BlogCard.astro'
 
-  const today = new Date()
+const today = new Date()
 ---
 
-<footer class="text-center">
-  &copy; {today.getFullYear()} {SITE_TITLE}. All rights reserved.
+<footer class="py-6 text-center">
+  &copy; {today.getFullYear()}
+  {SITE_TITLE}。
 </footer>

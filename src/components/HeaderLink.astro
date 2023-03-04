@@ -5,17 +5,17 @@ const { href, class: className, ...props } = Astro.props
 
 const { pathname } = Astro.url
 const isActive = href === pathname || href === pathname.replace(/\/$/, '')
-const activeColor = isActive && 'lg:bg-violet-300 lg:dark:bg-violet-700'
+const activeColor = isActive && 'lg:bg-main-light lg:dark:bg-main-darker'
 ---
 
 <a
   href={href}
-  class={`${activeColor} relative transition-all group
-  lg:hover:bg-violet-200 lg:dark:hover:bg-violet-800 h-full px-6 flex items-center`}
+  class={`${activeColor} transition-all group
+  md:hover:bg-main-lighter md:dark:hover:bg-main-dark h-full px-6 flex items-center`}
   {...props}
 >
   <slot />
-  <span
+  <!-- <span
     class="absolute -bottom-2 left-0 hidden h-1 w-0 bg-black transition-all group-hover:w-full group-hover:bg-red-600 md:block lg:hidden"
-  ></span>
+  ></span> -->
 </a>
