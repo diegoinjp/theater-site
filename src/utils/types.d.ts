@@ -45,3 +45,22 @@ export interface LinkType {
   url: string
   label: string
 }
+export interface InstructionType {
+  title: string
+  subtitle?: string
+}
+
+export interface ContactType {
+  theater: string
+  responsible: string
+  program: string
+  phone: string
+  email: string
+  content: string
+}
+
+export type ContactProps = {
+  name: string
+  placeholder?: string
+  type: 'email' | 'text' | 'tel'
+}

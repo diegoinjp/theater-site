@@ -8,22 +8,39 @@ media_folder: 'src/assets' # Media files will be stored in the repo under static
 public_folder: '/assets' # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-  - name: 'blog' # Used in routes, e.g., /admin/collections/blog
-    label: 'Blog' # Used in the UI
+  - name: 'news' # Used in routes, e.g., /admin/collections/blog
+    label: 'News' # Used in the UI
     folder: 'src/pages/blog' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {
-          label: 'layout',
-          name: 'layout',
-          widget: 'hidden',
-          default: '../../layouts/BlogPost.astro'
-        }
+      - { label: 'layout', name: 'layout', widget: 'hidden', default: '../../layouts/BlogPost.astro' }
       - { label: 'title', name: 'title', widget: 'string' }
       - { label: 'description', name: 'description', widget: 'string' }
       - { label: 'pubDate', name: 'pubDate', widget: 'datetime' }
       - { label: 'heroImage', name: 'heroImage', widget: 'image' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'members' # Used in routes, e.g., /admin/collections/blog
+    label: 'Members' # Used in the UI
+    folder: 'src/pages/members' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: 'layout', name: 'layout', widget: 'hidden', default: '../../layouts/BlogPost.astro' }
+      - { label: 'name', name: 'name', widget: 'string' }
+      - { label: 'nameReading', name: 'nameReading', widget: 'string' }
+      - { label: 'nameRomaji', name: 'nameRomaji', widget: 'string' }
+      - { label: 'order', name: 'order', widget: 'string' }
+      - { label: 'role', name: 'role', widget: 'string' }
+      - { label: 'height', name: 'height', widget: 'string' }
+      - { label: 'birthplace', name: 'birthplace', widget: 'string' }
+      - { label: 'bloodType', name: 'bloodType', widget: 'string' }
+      - { label: 'hobby', name: 'hobby', widget: 'string' }
+      - { label: 'skill', name: 'skill', widget: 'string' }
+      - { label: 'twitter', name: 'twitter', widget: 'string' }
+      - { label: 'instagram', name: 'instagram', widget: 'string' }
+      - { label: 'otherSns', name: 'otherSns', widget: 'string' }
+      - { label: 'imgUrl', name: 'imgUrl', widget: 'image' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'info' # Used in routes, e.g., /admin/collections/blog
     label: 'Info' # Used in the UI
@@ -31,12 +48,7 @@ collections:
     create: false # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {
-          label: 'layout',
-          name: 'layout',
-          widget: 'hidden',
-          default: '../../layouts/BlogPost.astro'
-        }
+      - { label: 'layout', name: 'layout', widget: 'hidden', default: '../../layouts/BlogPost.astro' }
       - { label: 'title', name: 'title', widget: 'string' }
       - { label: 'description', name: 'description', widget: 'string' }
       - { label: 'updatedDate', name: 'updatedDate', widget: 'datetime' }
