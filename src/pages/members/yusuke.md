@@ -1,17 +1,17 @@
 ---
-layout: '../../layouts/MemberLayout.astro'
+layout: ../../layouts/MemberLayout.astro
 name: 野田祐介
 nameReading: のだゆうすけ
 nameRomaji: Yusuke Noda
-order: 03
+order: 3
 role: 監督・演出・役者
-height: 168
+height: 170
 birthplace: 京都
 bloodType: B
 hobby: 演劇
 skill: 野球、ジャグリング、イタリア料理
-twitter: diego_injp
-instagram: diego_injp
+twitter: nodi
+instagram: nodayu
 otherSns: diego_injp
 imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-03.jpg?tr=w-auto
 ---
