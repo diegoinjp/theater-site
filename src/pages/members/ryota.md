@@ -1,18 +1,18 @@
 ---
-layout: '../../layouts/MemberLayout.astro'
+layout: ../../layouts/MemberLayout.astro
 name: 近藤亮太
 nameReading: こんどうりょうた
 nameRomaji: Ryota Kondo
-order: 02
+order: 2
 role: 監督・演出・役者
 height: 165
 birthplace: 愛知
 bloodType: B
 hobby: 演劇
-skill: 野球、ジャグリング、イタリア料理
-twitter: diego_injp
-instagram: diego_injp
-otherSns: diego_injp
+skill: テニス・声優
+twitter: ryochan
+instagram: kondoryo
+otherSns: ryota
 imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-02.jpg?tr=w-auto
 ---
 
