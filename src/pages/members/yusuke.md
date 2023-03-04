@@ -5,14 +5,14 @@ nameReading: のだゆうすけ
 nameRomaji: Yusuke Noda
 order: 03
 role: 監督・演出・役者
-height: 168cm
+height: 168
 birthplace: 京都
-bloodType: B型
+bloodType: B
 hobby: 演劇
 skill: 野球、ジャグリング、イタリア料理
-twitter: https://twitter.com/
-instagram: https://instagram.com
-otherSns: https://www.facebook.com/
+twitter: diego_injp
+instagram: diego_injp
+otherSns: diego_injp
 imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-03.jpg?tr=w-auto
 ---
 

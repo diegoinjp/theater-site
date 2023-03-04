@@ -5,14 +5,14 @@ nameReading: こんどうりょうた
 nameRomaji: Ryota Kondo
 order: 02
 role: 監督・演出・役者
-height: 165cm
+height: 165
 birthplace: 愛知
-bloodType: B型
+bloodType: B
 hobby: 演劇
 skill: 野球、ジャグリング、イタリア料理
-twitter: https://twitter.com/
-instagram: https://instagram.com
-otherSns: https://www.facebook.com/
+twitter: diego_injp
+instagram: diego_injp
+otherSns: diego_injp
 imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-02.jpg?tr=w-auto
 ---
 

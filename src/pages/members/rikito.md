@@ -5,14 +5,14 @@ nameReading: おおたりきと
 nameRomaji: Rikito Ohta
 order: 04
 role: 監督・演出・役者
-height: 178cm
+height: 178
 birthplace: 京都
-bloodType: O型
+bloodType: O
 hobby: 演劇
 skill: 野球、ジャグリング、イタリア料理
-twitter: https://twitter.com/
-instagram: https://instagram.com
-otherSns: https://www.facebook.com/
+twitter: diego_injp
+instagram: diego_injp
+otherSns: diego_injp
 imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-04.jpg?tr=w-auto
 ---
 

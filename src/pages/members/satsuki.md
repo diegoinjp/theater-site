@@ -5,14 +5,14 @@ nameReading: ささきこうすけ
 nameRomaji: Kosuke Sasaki
 order: 01
 role: 監督・演出・役者
-height: 170cm
+height: 170
 birthplace: 平塚
-bloodType: A型
+bloodType: A
 hobby: 演劇
 skill: 野球、ジャグリング、イタリア料理
-twitter: https://twitter.com/
-instagram: https://instagram.com
-otherSns: https://www.facebook.com/
+twitter: diego_injp
+instagram: diego_injp
+otherSns: diego_injp
 imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-01.jpg?tr=w-auto
 ---
 
