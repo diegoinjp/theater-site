@@ -1,5 +1,10 @@
 ---
-const { title, subtitle, desc } = Astro.props
+export type Props = {
+  title: string
+  subtitle?: string
+  desc?: string
+}
+const { title, subtitle, desc } = Astro.props as Props
 ---
 
 <div class="flex">

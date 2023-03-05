@@ -1,5 +1,9 @@
 ---
-const { sub } = Astro.props
+export type Props = {
+  sub?: string
+}
+
+const { sub } = Astro.props as Props
 ---
 
 <div class="my-6">

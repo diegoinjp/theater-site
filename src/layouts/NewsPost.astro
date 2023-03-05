@@ -1,0 +1,47 @@
+---
+import Section from '../components/Section.astro'
+import Title from '../components/Title.astro'
+import { date_options } from '../config'
+import BaseLayout from './BaseLayout.astro'
+
+export interface Props {
+  content: {
+    title: string
+    description: string
+    pubDate: string
+    heroImage?: string
+  }
+}
+
+const {
+  content: { title, description, pubDate, heroImage }
+} = Astro.props as Props
+---
+
+<BaseLayout title={title} description={description}>
+  <Section title="NEWS" sub="ニュース" isCenter={true} />
+  <Section index={2}>
+    <div class="flex w-full items-center justify-between">
+      <h3 class="text-2xl font-bold text-main-darker dark:text-main-light md:text-3xl">{title}</h3>
+      <time class="min-w-[6rem] border-l-2 pl-4 text-base"
+        >{Intl.DateTimeFormat('ja-JP', date_options).format(new Date(pubDate))}</time
+      >
+    </div>
+    <div>
+      {heroImage && <img class="mb-4 md:float-right md:ml-4 md:w-1/2" src={heroImage} alt={title} />}
+      <!-- {
+      updatedDate && (
+        <div>
+          Last updated on
+          <time>{Intl.DateTimeFormat('ja-JP', date_options).format(new Date(updatedDate))}</time>
+        </div>
+      )
+    } -->
+      <hr class="mb-4 md:hidden" />
+      <slot />
+    </div>
+  </Section>
+  <Section>
+    <button onclick="history.back()">戻る</button>
+  </Section>
+</BaseLayout>

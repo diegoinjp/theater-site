@@ -1,13 +1,13 @@
 ---
 import Title from './Title.astro'
 
-export type ISection = {
+export type Props = {
   index?: number
   isCenter?: boolean
   title?: string
-  subtitle?: string
+  sub?: string
 }
-const { index = 1, isCenter = false, title, sub } = Astro.props as ISection
+const { index = 1, isCenter = false, title, sub } = Astro.props as Props
 const indexColor = index % 2 === 0 ? 'bg-white dark:bg-back-dark' : 'bg-main-light dark:bg-main-darker'
 ---
 

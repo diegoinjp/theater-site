@@ -1,9 +1,13 @@
 ---
-const { index } = Astro.props
+export type Props = {
+  isCenter?: boolean
+}
 
-const indexColor = index && index % 2 !== 0 ? '' : 'bg-main-lighter dark:bg-main-dark'
+const { isCenter = false } = Astro.props as Props
+
+const centerStyle = isCenter ? 'text-center' : ''
 ---
 
-<div class={`w-full border-b border-back-dark p-4 dark:border-white md:px-4 ${indexColor}`}>
+<div class={`w-full border-b border-back-dark p-4 dark:border-white md:px-4 ${centerStyle}`}>
   <slot />
 </div>

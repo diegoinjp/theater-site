@@ -6,18 +6,19 @@ import Header from '../components/Header'
 import HeaderLink from '../components/HeaderLink.astro'
 import { links, SITE_DESCRIPTION, SITE_TITLE } from '../config'
 
-export interface BaseProps {
+export type Props = {
   title: string
   carouselContent?: any[]
+  description?: string
 }
 
-const { title, carouselContent } = Astro.props as BaseProps
+const { title, carouselContent, description = SITE_DESCRIPTION } = Astro.props as Props
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead title={`${SITE_TITLE} | ${title}`} description={SITE_DESCRIPTION} />
+    <BaseHead title={`${SITE_TITLE} | ${title}`} description={description} />
   </head>
 
   <body

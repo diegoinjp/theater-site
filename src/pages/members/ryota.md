@@ -10,9 +10,9 @@ birthplace: 愛知
 bloodType: B
 hobby: 演劇
 skill: 野球、ジャグリング、イタリア料理
-twitter: diego_injp
-instagram: diego_injp
-otherSns: diego_injp
+twitter: ryochan
+instagram: ryo
+otherSns: ryota
 imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-02.jpg?tr=w-auto
 ---
 

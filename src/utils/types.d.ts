@@ -50,14 +50,14 @@ export interface InstructionType {
   subtitle?: string
 }
 
-export interface ContactType {
-  theater: string
-  responsible: string
-  program: string
-  phone: string
-  email: string
-  content: string
-}
+// export interface ContactType {
+//   theater: string
+//   responsible: string
+//   program: string
+//   phone: string
+//   email: string
+//   content: string
+// }
 
 export type ContactProps = {
   name: string

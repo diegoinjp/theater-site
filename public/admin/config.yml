@@ -14,7 +14,7 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - { label: 'layout', name: 'layout', widget: 'hidden', default: '../../layouts/BlogPost.astro' }
+      - { label: 'layout', name: 'layout', widget: 'hidden', default: '../../layouts/NewsPost.astro' }
       - { label: 'title', name: 'title', widget: 'string' }
       - { label: 'description', name: 'description', widget: 'string' }
       - { label: 'pubDate', name: 'pubDate', widget: 'datetime' }
@@ -26,7 +26,7 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - { label: 'layout', name: 'layout', widget: 'hidden', default: '../../layouts/BlogPost.astro' }
+      - { label: 'layout', name: 'layout', widget: 'hidden', default: '../../layouts/NewsPost.astro' }
       - { label: 'name', name: 'name', widget: 'string' }
       - { label: 'nameReading', name: 'nameReading', widget: 'string' }
       - { label: 'nameRomaji', name: 'nameRomaji', widget: 'string' }
