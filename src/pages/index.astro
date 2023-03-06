@@ -33,12 +33,14 @@ const posts = (await Astro.glob('./news/*.{md,mdx}')).sort(
   <Section index={2}>
     <div class="flex flex-col items-center justify-around gap-4 md:flex-row">
       <BlogList limit={4} posts={posts} />
-      <a
-        class="twitter-timeline"
-        data-width="300"
-        data-height="500"
-        href="https://twitter.com/g_tsuki_shizuku?ref_src=twsrc%5Etfw">Tweets by g_tsuki_shizuku</a
-      >
+      <div class="w-fit">
+        <a
+          class="twitter-timeline"
+          data-width="300"
+          data-height="500"
+          href="https://twitter.com/g_tsuki_shizuku?ref_src=twsrc%5Etfw">Tweets by g_tsuki_shizuku</a
+        >
+      </div>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </Section>
