@@ -11,7 +11,11 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
-const { title, description, image = '/placeholder-social.jpg' } = Astro.props
+const {
+  title,
+  description,
+  image = 'https://ik.imagekit.io/dvlljo/theate-lp/img-social.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1678105097373?tr:w-auto'
+} = Astro.props
 ---
 
 <!-- Global Metadata -->
