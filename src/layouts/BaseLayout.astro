@@ -27,7 +27,7 @@ const { title, carouselContent, description = SITE_DESCRIPTION } = Astro.props a
     <main
       class="flex min-h-screen w-full flex-col justify-between bg-white text-back-dark dark:bg-back-dark dark:text-white"
     >
-      <div class="">
+      <div class="mt-16">
         <Header client:only="solid" title={SITE_TITLE}>
           {links.map((link) => <HeaderLink href={link.url}>{link.label.toUpperCase()}</HeaderLink>)}
         </Header>
