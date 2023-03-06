@@ -13,7 +13,7 @@ skill: 野球、ジャグリング、イタリア料理
 twitter: nodi
 instagram: nodayu
 otherSns: nodayu
-imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-03.jpg?tr=w-auto
+imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-03.jpg?tr:w-auto
 ---
 
 ####【出演・活動実績】

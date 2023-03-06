@@ -13,7 +13,7 @@ skill: 映像・編集・カラオケ
 twitter: diego_injp
 instagram: vallejin
 otherSns: diego_injp
-imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-09.jpg?tr=w-auto
+imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-09.jpg?tr:w-auto
 ---
 
 ####【出演・活動実績】

@@ -13,7 +13,7 @@ skill: 野球、ジャグリング、イタリア料理
 twitter: diego_injp
 instagram: diego_injp
 otherSns: diego_injp
-imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-12.jpg?tr=w-auto
+imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-12.jpg?tr:w-auto
 ---
 
 ####【出演・活動実績】

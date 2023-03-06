@@ -13,7 +13,7 @@ skill: 野球、ジャグリング、イタリア料理
 twitter: ryochan
 instagram: ryo
 otherSns: ryota
-imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-02.jpg?tr=w-auto
+imgUrl: https://ik.imagekit.io/dvlljo/theate-lp/cast/img-02.jpg?tr:w-auto
 ---
 
 ####【出演・活動実績】

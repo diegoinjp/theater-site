@@ -22,7 +22,7 @@ export type CarouselProps = {
 const sArrows =
   'w-10 h-10 rounded-full absolute bg-white/40 hover:bg-white/60 grid place-items-center top-1/2 transform -translate-y-1/2 z-10 cursor-pointer'
 
-const image = " bg-[url('https://ik.imagekit.io/dvlljo/theate-lp/img-03.JPG?tr=w-auto')]"
+const image = " bg-[url('https://ik.imagekit.io/dvlljo/theate-lp/img-03.JPG?tr:w-auto')]"
 
 const Carousel = ({
   posts,
